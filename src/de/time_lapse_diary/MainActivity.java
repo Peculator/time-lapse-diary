@@ -1,7 +1,7 @@
 package de.time_lapse_diary;
 
 import java.util.ArrayList;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -35,16 +35,20 @@ public class MainActivity extends Activity {
         // Set custom adapter to gridview
         gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(mAdapter);
- 
-        // Implement On Item click listener
-        gridView.setOnItemClickListener(new OnItemClickListener()
-        {
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position,
-                    long arg3) {
-                Toast.makeText(MainActivity.this, mAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+
+        gridView.setAdapter(new ImageAdapter(this));
+
+        OnItemClickListener v =	new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                if (position == 0) {
+                    Intent myIntent = new Intent(MainActivity.this, PhotoActivity.class);
+                    startActivity(myIntent);
+                } else
+                    Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
-        });
+        };
+        gridview.setOnItemClickListener(v);
+
 	}
 	
 	public void prepareList()
