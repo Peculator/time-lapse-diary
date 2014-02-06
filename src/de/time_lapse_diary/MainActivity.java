@@ -16,6 +16,8 @@ import android.widget.GridView;
 import android.widget.Toast;
 import android.support.v7.app.ActionBar;
 
+import de.time_lapse_diary.photo.PhotoActivity;
+
 public class MainActivity extends Activity {
 
 	public static String tag = "tld";

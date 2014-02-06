@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="de.time_lapse_diary.PhotoActivity"
+            android:name=".photo.PhotoActivity"
             android:label="@string/app_name"
             android:screenOrientation="landscape">
             <intent-filter>

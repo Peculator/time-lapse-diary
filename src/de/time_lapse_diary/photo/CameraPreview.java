@@ -1,4 +1,4 @@
-package de.time_lapse_diary;
+package de.time_lapse_diary.photo;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -10,6 +10,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import java.io.IOException;
+
+import de.time_lapse_diary.MainActivity;
 
 /** A basic Camera preview class */
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
