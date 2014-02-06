@@ -1,9 +1,11 @@
-package de.time_lapse_diary;
+package de.time_lapse_diary.photo;
 
 import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.widget.FrameLayout;
+
+import de.time_lapse_diary.R;
 
 public class PhotoActivity extends Activity {
 
@@ -21,7 +23,7 @@ public class PhotoActivity extends Activity {
         // Create our Preview view and set it as the content of our activity.
         mPreview = new CameraPreview(this, mCamera);
 
-        GridView gridView = new GridView(this);
+        GridOverlayView gridView = new GridOverlayView(this);
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
         preview.addView(gridView);

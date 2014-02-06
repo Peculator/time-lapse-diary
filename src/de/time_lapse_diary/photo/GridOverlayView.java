@@ -1,4 +1,4 @@
-package de.time_lapse_diary;
+package de.time_lapse_diary.photo;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -7,13 +7,13 @@ import android.graphics.Paint;
 import android.util.Log;
 import android.view.View;
 
-public class GridView extends View {
+public class GridOverlayView extends View {
 
     private static String TAG = "tld";
 
     Paint paint = new Paint();
 
-    public GridView(Context context) {
+    public GridOverlayView(Context context) {
         super(context);
     }
 
