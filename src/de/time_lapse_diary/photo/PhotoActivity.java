@@ -3,7 +3,9 @@ package de.time_lapse_diary.photo;
 import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import de.time_lapse_diary.R;
 
@@ -25,8 +27,20 @@ public class PhotoActivity extends Activity {
 
         GridOverlayView gridView = new GridOverlayView(this);
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+
+        ImageView imgView = new ImageView(this);
+        imgView.setImageResource(R.drawable.ic_launcher);
+        //setting image position
+        imgView.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        imgView.setAlpha(80);
+        // for newer sdks >10
+        // imgView.setAlpha(0.5fs);
         preview.addView(mPreview);
         preview.addView(gridView);
+        preview.addView(imgView);
     }
 
     /** A safe way to get an instance of the Camera object. */
