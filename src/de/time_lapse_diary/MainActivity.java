@@ -36,8 +36,6 @@ public class MainActivity extends Activity {
         gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(mAdapter);
 
-        gridView.setAdapter(new ImageAdapter(this));
-
         OnItemClickListener v =	new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 if (position == 0) {
@@ -47,7 +45,7 @@ public class MainActivity extends Activity {
                     Toast.makeText(MainActivity.this, "" + position, Toast.LENGTH_SHORT).show();
             }
         };
-        gridview.setOnItemClickListener(v);
+        gridView.setOnItemClickListener(v);
 
 	}
 	
